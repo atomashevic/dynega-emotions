@@ -1,4 +1,3 @@
-setwd("src/")
 library(qgraph)
 
 net.all.0.am <- read.csv("../results/net.add.all.0.csv")

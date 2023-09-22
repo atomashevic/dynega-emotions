@@ -1,37 +1,32 @@
-setwd("src/")
+source("helpers.R")
 
-source("affective-dynamics-helpers.R")
-
-# Supplementary analysis
-
-
-urls <- read.csv('../data-clean/videos-faces-selection.csv')
+urls <- read.csv('../data/videos-faces-selection.csv')
 print('Face selection file loaded!')
 
-gps <- read.csv('../data-clean/gps.csv')
+gps <- read.csv('../data/gps.csv')
 print('GPS data loaded!')
 
-data <- clean.csv(read.csv('../data-clean/0-t300.csv'), face = 0, tmax = 240, k = 1)
+data <- clean.csv(read.csv('../data/0-t300.csv'), face = 0, tmax = 240, k = 1)
 
 for (i in 2:nrow(urls)){
     f <- urls$Face[i]
     if (f != 999){
-        csv <- paste('../data-clean/',i-1,'-t300.csv',sep='')
+        csv <- paste('../data/',i-1,'-t300.csv',sep='')
         # print(paste('Debug, video#:', i))
         tdf <- clean.csv(read.csv(csv), face = f, tmax = 240, k = i)
         data <- rbind(data, tdf)
     }
 }
 
-if (!file.exists("../data-clean/dyn-cent.csv"))
+if (!file.exists("../data/dyn-cent.csv"))
 {
 
-data.cent<- clean.csv(read.csv('../data-clean/0-t300.csv'), face = 0, tmax = 240, k = 1, transformation = 'center')
+data.cent<- clean.csv(read.csv('../data/0-t300.csv'), face = 0, tmax = 240, k = 1, transformation = 'center')
 
 for (i in 2:nrow(urls)){
     f <- urls$Face[i]
     if (f != 999){
-        csv <- paste('../data-clean/',i-1,'-t300.csv',sep='')
+        csv <- paste('../data/',i-1,'-t300.csv',sep='')
         # print(paste('Debug, video#:', i))
         tdf <- clean.csv(read.csv(csv), face = f, tmax = 240, k = i, transformation = 'center')
         data.cent <- rbind(data.cent, tdf)
@@ -39,9 +34,9 @@ for (i in 2:nrow(urls)){
 }
 data.cent$populism <- as.integer(data.cent$populism)
 data.cent <- data.cent[!is.na(data.cent$populism),]
-write.csv(as.data.frame(data.cent),"../data-clean/dyn-cent.csv", row.names = FALSE)
+write.csv(as.data.frame(data.cent),"../data/dyn-cent.csv", row.names = FALSE)
 print("Center transformation dataset saved!")
-} else { data.cent <- as.data.frame(read.csv("../data-clean/dyn-cent.csv"))
+} else { data.cent <- as.data.frame(read.csv("../data/dyn-cent.csv"))
 	print('Center transformation  emotion time series data loaded!')
 }
 
@@ -245,7 +240,7 @@ dega.cent.p4.0 <- dynEGA(
 
 print('DynEGA All derivatives=0')
 net.cent.all.0 <- dega.cent.all.0$dynEGA$network
-write.csv(as.data.frame(net.cent.all.0), file = "net.cent.all.0.csv", row.names = FALSE)
+write.csv(as.data.frame(net.cent.all.0), file = "../results/net.cent.all.0.csv", row.names = FALSE)
 
 png(filename = '../figures/dega.cent.all.0.png', width = 800, height = 800)
 plot(dega.cent.all.0)
@@ -254,7 +249,7 @@ dev.off()
 
 print('DynEGA P1 derivatives=0')
 net.cent.p1.0 <- dega.cent.p1.0$dynEGA$network
-write.csv(as.data.frame(net.cent.p1.0), file = "net.cent.p1.0.csv", row.names = FALSE)
+write.csv(as.data.frame(net.cent.p1.0), file = "../results/net.cent.p1.0.csv", row.names = FALSE)
 
 png(filename = '../figures/dega.cent.p1.0.png', width = 800, height = 800)
 plot(dega.cent.p1.0)
@@ -265,7 +260,7 @@ print('Done!')
 print('DynEGA P2 derivatives=0')
 
 net.cent.p2.0 <- dega.cent.p2.0$dynEGA$network
-write.csv(as.data.frame(net.cent.p2.0), file = "net.cent.p2.0.csv", row.names = FALSE)
+write.csv(as.data.frame(net.cent.p2.0), file = "../results/net.cent.p2.0.csv", row.names = FALSE)
 
 png(filename = '../figures/dega.cent.p2.0.png', width = 800, height = 800)
 plot(dega.cent.p2.0)
@@ -276,7 +271,7 @@ print('Done!')
 print('DynEGA P3 derivatives=0')
 
 net.cent.p3.0 <- dega.cent.p3.0$dynEGA$network
-write.csv(as.data.frame(net.cent.p3.0), file = "net.cent.p3.0.csv", row.names = FALSE)
+write.csv(as.data.frame(net.cent.p3.0), file = "../results/net.cent.p3.0.csv", row.names = FALSE)
 
 png(filename = '../figures/dega.cent.p3.0.png', width = 800, height = 800)
 plot(dega.cent.p3.0)
@@ -287,7 +282,7 @@ print('Done!')
 print('DynEGA P4 derivatives=0')
 
 net.cent.p4.0 <- dega.cent.p4.0$dynEGA$network
-write.csv(as.data.frame(net.cent.p4.0), file = "net.cent.p4.0.csv", row.names = FALSE)
+write.csv(as.data.frame(net.cent.p4.0), file = "../results/net.cent.p4.0.csv", row.names = FALSE)
 
 png(filename = '../figures/dega.cent.p4.0.png', width = 800, height = 800)
 plot(dega.cent.p4.0)
@@ -298,7 +293,7 @@ print('Done!')
 print('DynEGA Pluralist derivatives=0')
 
 net.cent.plu.0 <- dega.cent.plu.0$dynEGA$network
-write.csv(as.data.frame(net.cent.plu.0), file = "net.cent.plu.0.csv", row.names = FALSE)
+write.csv(as.data.frame(net.cent.plu.0), file = "../results/net.cent.plu.0.csv", row.names = FALSE)
 
 png(filename = '../figures/dega.cent.plu.0.png', width = 800, height = 800)
 plot(dega.cent.plu.0)
@@ -309,7 +304,7 @@ print('Done!')
 print('DynEGA Populist derivatives=0')
 
 net.cent.pop.0 <- dega.cent.pop.0$dynEGA$network
-write.csv(as.data.frame(net.cent.pop.0), file = "net.cent.pop.0.csv", row.names = FALSE)
+write.csv(as.data.frame(net.cent.pop.0), file = "../results/net.cent.pop.0.csv", row.names = FALSE)
 
 png(filename = '../figures/dega.cent.pop.0.png', width = 800, height = 800)
 plot(dega.cent.pop.0)
