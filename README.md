@@ -1,6 +1,6 @@
 # Dynamic Exploratory Graph Analysis of Emotions in Politics
 
-Repository for the paper *Dynamic Exploratory Graph Analysis of Emotions in Politics*.
+Repository for the paper [Dynamic Exploratory Graph Analysis of Emotions in Politics](https://osf.io/preprints/psyarxiv/zgtrb/).
 
 Inputs are in the `data` folder:
 - `gps.csv` Data from [Global Party Survey](https://www.globalpartysurvey.org/)
