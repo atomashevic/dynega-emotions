@@ -101,3 +101,28 @@ clean.csv <- function(df, k, face = 0, tmax = 240, transformation = 'none', neut
   temp$populism <- rep(populism(gps,k), nrow(temp))
   return(temp)
 }
+
+
+get_max_id <- function(path){
+#' Get the maximum ID from a directory of files
+#'
+#' This function takes a directory path as input and searches for files with a specific pattern.
+#' It extracts the numeric values from the filenames and returns the maximum value.
+#'
+#' @param path The path to the directory containing the files
+#' @return The maximum numeric value extracted from the filenames
+#' @examples
+#' get_max_id("/path/to/files")
+  files <- list.files(path = path, pattern = "video-\\d+-300\\.csv$", full.names = TRUE)
+
+  x_values <- as.numeric(gsub("video-(\\d+)-300\\.csv$", "\\1", basename(files)))
+
+  max_x <- max(x_values, na.rm = TRUE)
+
+  return(max_x)
+}
+
+get_empty_rows <- function(df){
+  # get fraction of rows which have at least one NA value
+  return(sum(rowSums(is.na(df)) > 0) / nrow(df))
+}

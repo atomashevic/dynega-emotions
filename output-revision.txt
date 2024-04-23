@@ -1,0 +1,598 @@
+[1] "Dataset has 132 videos"
+[1] "Dataset has: 33233 rows"
+[1] "Average number of frames per video: 251.765151515152"
+[1] "Dataset has 9 columns"
+[1] "Column names:"
+[1] "excitement" "happiness"  "pride"      "anger"      "fear"      
+[6] "sadness"    "neutral"    "video"      "populism"  
+[1] "==============================================="
+[1] "Model 1: population, zero order"
+[1] "Model 1 with 3 embeddings"
+[1] -2.39729
+[1] "Model 1 with 5 embeddings"
+[1] -2.399447
+[1] "Model 1 with 10 embeddings"
+[1] -2.365843
+[1] "Model 1 with 15 embeddings"
+[1] -2.119809
+[1] "Model 1 with 20 embeddings"
+[1] -2.110521
+[1] "Lowest TEFI of -2.399 was found for 5 embedding dimensions"
+[1] "Model 1 with optimal number of embeddings: "
+[1] "Model has 2 communities"
+null device 
+          1 
+[1;m[4;mPopulation
+
+[0m[0mModel: GLASSO (EBIC with gamma = 0.5)
+Correlations: auto
+Lambda: 0.0311337467918815 (n = 100, ratio = 0.1)
+
+Number of nodes: 6
+Number of edges: 13
+Edge density: 0.867
+
+Non-zero edge weights: 
+     M    SD    Min   Max
+ 0.033 0.146 -0.174 0.247
+
+----
+
+Consensus Method: Most Common (1000 iterations)
+Algorithm: Louvain
+Order: Higher
+
+Number of communities:  2
+
+excitement.Ord0  happiness.Ord0      pride.Ord0      anger.Ord0       fear.Ord0 
+              1               1               1               2               2 
+   sadness.Ord0 
+              2 
+
+----
+
+Unidimensional Method: Louvain
+Unidimensional: No
+
+----
+
+TEFI: -2.399[1] "==============================================="
+[1] "Model 2: population, first order"
+[1] "Model 2 with 3 embeddings"
+[1] -1.804626
+[1] "Model 2 with 5 embeddings"
+[1] -2.3504
+[1] "Model 2 with 10 embeddings"
+[1] -2.429099
+[1] "Model 2 with 15 embeddings"
+[1] -2.441544
+[1] "Model 2 with 20 embeddings"
+[1] -2.460961
+[1] "Lowest TEFI of -2.461 was found for 20 embedding dimensions"
+null device 
+          1 
+[1] "Model 2 with optimal number of embeddings: "
+[1] "Model has 2 communities"
+[1;m[4;mPopulation
+
+[0m[0mModel: GLASSO (EBIC with gamma = 0.5)
+Correlations: auto
+Lambda: 0.0423498192574916 (n = 100, ratio = 0.1)
+
+Number of nodes: 6
+Number of edges: 13
+Edge density: 0.867
+
+Non-zero edge weights: 
+      M    SD    Min   Max
+ -0.038 0.163 -0.200 0.320
+
+----
+
+Consensus Method: Most Common (1000 iterations)
+Algorithm: Louvain
+Order: Higher
+
+Number of communities:  2
+
+excitement.Ord1  happiness.Ord1      pride.Ord1      anger.Ord1       fear.Ord1 
+              1               1               1               1               2 
+   sadness.Ord1 
+              2 
+
+----
+
+Unidimensional Method: Louvain
+Unidimensional: No
+
+----
+
+TEFI: -2.461[1] "==============================================="
+[1] "Model 3: individual, zero order"
+[1] "Model 3 details: "
+[1;m[4;mDynamic Exploratory Graph Analysis
+
+[0m[0mNumber of Embeddings:  5
+Embedding Offset (tau):  1
+Time between Observations (delta/lag):  1
+Derivatives:  First-order (1)
+
+--------------------------------------------------------------------------------
+
+[1;m[4;mPopulation
+
+[0m[0mModel: GLASSO (EBIC with gamma = 0.5)
+Correlations: auto
+Lambda: 0.0355709871960391 (n = 100, ratio = 0.1)
+
+Number of nodes: 6
+Number of edges: 15
+Edge density: 1.000
+
+Non-zero edge weights: 
+      M    SD    Min   Max
+ -0.047 0.137 -0.215 0.275
+
+----
+
+Consensus Method: Most Common (1000 iterations)
+Algorithm: Louvain
+Order: Higher
+
+Number of communities:  2
+
+excitement.Ord1  happiness.Ord1      pride.Ord1      anger.Ord1       fear.Ord1 
+              1               1               1               1               2 
+   sadness.Ord1 
+              2 
+
+----
+
+Unidimensional Method: Louvain
+Unidimensional: No
+
+----
+
+TEFI: -2.35
+
+--------------------------------------------------------------------------------
+
+[1;m[4;mIndividual
+
+[0m[0mModel: GLASSO (EBIC)
+Correlations: auto
+Unidimensional Method:  Louvain
+
+----
+
+Number of cases:  132 
+
+Median dimensions: 2
+                       
+             0  1  2  3
+Frequency:   1 25 93 13
+[1] "==============================================="
+[1] "Model 4: individual, first order"
+[1] "Model 4 details: "
+[1;m[4;mDynamic Exploratory Graph Analysis
+
+[0m[0mNumber of Embeddings:  15
+Embedding Offset (tau):  1
+Time between Observations (delta/lag):  1
+Derivatives:  First-order (1)
+
+--------------------------------------------------------------------------------
+
+[1;m[4;mPopulation
+
+[0m[0mModel: GLASSO (EBIC with gamma = 0.5)
+Correlations: auto
+Lambda: 0.0425000689286474 (n = 100, ratio = 0.1)
+
+Number of nodes: 6
+Number of edges: 13
+Edge density: 0.867
+
+Non-zero edge weights: 
+      M    SD    Min   Max
+ -0.036 0.161 -0.197 0.321
+
+----
+
+Consensus Method: Most Common (1000 iterations)
+Algorithm: Louvain
+Order: Higher
+
+Number of communities:  2
+
+excitement.Ord1  happiness.Ord1      pride.Ord1      anger.Ord1       fear.Ord1 
+              1               1               1               1               2 
+   sadness.Ord1 
+              2 
+
+----
+
+Unidimensional Method: Louvain
+Unidimensional: No
+
+----
+
+TEFI: -2.442
+
+--------------------------------------------------------------------------------
+
+[1;m[4;mIndividual
+
+[0m[0mModel: GLASSO (EBIC)
+Correlations: auto
+Unidimensional Method:  Louvain
+
+----
+
+Number of cases:  132 
+
+Median dimensions: 2
+                       
+             0  1  2  3
+Frequency:   1 33 88 10
+[1] "==============================================="
+[1] "Model 5: group, zero order"
+null device 
+          1 
+[1] "Model 5 details: "
+[1;m[4;mDynamic Exploratory Graph Analysis
+
+[0m[0mNumber of Embeddings:  5
+Embedding Offset (tau):  1
+Time between Observations (delta/lag):  1
+Derivatives:  Moving Average (0)
+
+--------------------------------------------------------------------------------
+
+[1;m[4;mGroup
+
+[0m[0mGroup:  1 
+
+Model: GLASSO (EBIC with gamma = 0.5)
+Correlations: auto
+Lambda: 0.0393500174653031 (n = 100, ratio = 0.1)
+
+Number of nodes: 6
+Number of edges: 15
+Edge density: 1.000
+
+Non-zero edge weights: 
+     M    SD    Min   Max
+ 0.043 0.148 -0.185 0.366
+
+----
+
+Consensus Method: Most Common (1000 iterations)
+Algorithm: Louvain
+Order: Higher
+
+Number of communities:  1
+
+excitement.Ord0  happiness.Ord0      pride.Ord0      anger.Ord0       fear.Ord0 
+              1               1               1               1               1 
+   sadness.Ord0 
+              1 
+
+----
+
+Unidimensional Method: Louvain
+Unidimensional: No
+
+----
+
+TEFI: 0
+
+------------
+
+Group:  2 
+
+Model: GLASSO (EBIC with gamma = 0.5)
+Correlations: auto
+Lambda: 0.0328899713202885 (n = 100, ratio = 0.1)
+
+Number of nodes: 6
+Number of edges: 13
+Edge density: 0.867
+
+Non-zero edge weights: 
+     M    SD    Min   Max
+ 0.034 0.128 -0.171 0.273
+
+----
+
+Consensus Method: Most Common (1000 iterations)
+Algorithm: Louvain
+Order: Higher
+
+Number of communities:  2
+
+excitement.Ord0  happiness.Ord0      pride.Ord0      anger.Ord0       fear.Ord0 
+              1               1               1               2               2 
+   sadness.Ord0 
+              2 
+
+----
+
+Unidimensional Method: Louvain
+Unidimensional: No
+
+----
+
+TEFI: -2.344
+
+------------
+
+Group:  3 
+
+Model: GLASSO (EBIC with gamma = 0.5)
+Correlations: auto
+Lambda: 0.0554065312217823 (n = 100, ratio = 0.1)
+
+Number of nodes: 6
+Number of edges: 14
+Edge density: 0.933
+
+Non-zero edge weights: 
+     M    SD    Min   Max
+ 0.041 0.212 -0.291 0.457
+
+----
+
+Consensus Method: Most Common (1000 iterations)
+Algorithm: Louvain
+Order: Higher
+
+Number of communities:  2
+
+excitement.Ord0  happiness.Ord0      pride.Ord0      anger.Ord0       fear.Ord0 
+              1               2               1               2               2 
+   sadness.Ord0 
+              1 
+
+----
+
+Unidimensional Method: Louvain
+Unidimensional: No
+
+----
+
+TEFI: -2.355
+
+------------
+
+Group:  4 
+
+Model: GLASSO (EBIC with gamma = 0.5)
+Correlations: auto
+Lambda: 0.0458754236637412 (n = 100, ratio = 0.1)
+
+Number of nodes: 6
+Number of edges: 14
+Edge density: 0.933
+
+Non-zero edge weights: 
+     M    SD    Min   Max
+ 0.035 0.188 -0.224 0.385
+
+----
+
+Consensus Method: Most Common (1000 iterations)
+Algorithm: Louvain
+Order: Higher
+
+Number of communities:  2
+
+excitement.Ord0  happiness.Ord0      pride.Ord0      anger.Ord0       fear.Ord0 
+              1               1               1               2               2 
+   sadness.Ord0 
+              2 
+
+----
+
+Unidimensional Method: Louvain
+Unidimensional: No
+
+----
+
+TEFI: -2.424[1] "==============================================="
+[1] "Model 6: group, first order"
+null device 
+          1 
+[1] "Model 6 details: "
+[1;m[4;mDynamic Exploratory Graph Analysis
+
+[0m[0mNumber of Embeddings:  20
+Embedding Offset (tau):  1
+Time between Observations (delta/lag):  1
+Derivatives:  First-order (1)
+
+--------------------------------------------------------------------------------
+
+[1;m[4;mGroup
+
+[0m[0mGroup:  1 
+
+Model: GLASSO (EBIC with gamma = 0.5)
+Correlations: auto
+Lambda: 0.0473874138069901 (n = 100, ratio = 0.1)
+
+Number of nodes: 6
+Number of edges: 12
+Edge density: 0.800
+
+Non-zero edge weights: 
+      M    SD    Min   Max
+ -0.007 0.195 -0.237 0.359
+
+----
+
+Consensus Method: Most Common (1000 iterations)
+Algorithm: Louvain
+Order: Higher
+
+Number of communities:  2
+
+excitement.Ord1  happiness.Ord1      pride.Ord1      anger.Ord1       fear.Ord1 
+              1               1               2               2               2 
+   sadness.Ord1 
+              1 
+
+----
+
+Unidimensional Method: Louvain
+Unidimensional: No
+
+----
+
+TEFI: -2.185
+
+------------
+
+Group:  2 
+
+Model: GLASSO (EBIC with gamma = 0.5)
+Correlations: auto
+Lambda: 0.0480628609787422 (n = 100, ratio = 0.1)
+
+Number of nodes: 6
+Number of edges: 13
+Edge density: 0.867
+
+Non-zero edge weights: 
+      M    SD    Min   Max
+ -0.089 0.166 -0.376 0.217
+
+----
+
+Consensus Method: Most Common (1000 iterations)
+Algorithm: Louvain
+Order: Higher
+
+Number of communities:  2
+
+excitement.Ord1  happiness.Ord1      pride.Ord1      anger.Ord1       fear.Ord1 
+              1               2               2               2               1 
+   sadness.Ord1 
+              1 
+
+----
+
+Unidimensional Method: Louvain
+Unidimensional: No
+
+----
+
+TEFI: -2.337
+
+------------
+
+Group:  3 
+
+Model: GLASSO (EBIC with gamma = 0.5)
+Correlations: auto
+Lambda: 0.0523834011376622 (n = 100, ratio = 0.1)
+
+Number of nodes: 6
+Number of edges: 11
+Edge density: 0.733
+
+Non-zero edge weights: 
+      M    SD    Min   Max
+ -0.027 0.203 -0.267 0.367
+
+----
+
+Consensus Method: Most Common (1000 iterations)
+Algorithm: Louvain
+Order: Higher
+
+Number of communities:  2
+
+excitement.Ord1  happiness.Ord1      pride.Ord1      anger.Ord1       fear.Ord1 
+              1               1               1               2               2 
+   sadness.Ord1 
+              2 
+
+----
+
+Unidimensional Method: Louvain
+Unidimensional: No
+
+----
+
+TEFI: -2.479
+
+------------
+
+Group:  4 
+
+Model: GLASSO (EBIC with gamma = 0.5)
+Correlations: auto
+Lambda: 0.0544674132051415 (n = 100, ratio = 0.1)
+
+Number of nodes: 6
+Number of edges: 11
+Edge density: 0.733
+
+Non-zero edge weights: 
+      M    SD    Min   Max
+ -0.009 0.183 -0.192 0.433
+
+----
+
+Consensus Method: Most Common (1000 iterations)
+Algorithm: Louvain
+Order: Higher
+
+Number of communities:  2
+
+excitement.Ord1  happiness.Ord1      pride.Ord1      anger.Ord1       fear.Ord1 
+              1               1               1               1               2 
+   sadness.Ord1 
+              2 
+
+----
+
+Unidimensional Method: Louvain
+Unidimensional: No
+
+----
+
+TEFI: -2.467[1] "==============================================="
+[1] "Ergodicity information for model 3 (individual, zero order): "
+[1;m[4;mEmpirical EII
+
+[0m[0mEII Method: Unweighted
+Shuffles: 5000
+EII:  1.9765
+
+[1;m[4;mBootstrap EII
+
+[0m[0mIterations: 100
+Mean = 1.9544 (SD = 0.0073)
+p-value = 0.0198 (greater)
+Ergodic: No
+
+Interpretation:
+ The empirical EII was significanlt greater from values that would be expected if the process was random, meaning the empirical data cannot be described by the population structure -- significant information is lost when collapsing across to the population structure.[1] "==============================================="
+[1] "Ergodicity information for model 4 (individual, first order): "
+[1;m[4;mEmpirical EII
+
+[0m[0mEII Method: Unweighted
+Shuffles: 5000
+EII:  2.1025
+
+[1;m[4;mBootstrap EII
+
+[0m[0mIterations: 100
+Mean = 2.0915 (SD = 0.0078)
+p-value = 0.1386 (n.s.)
+Ergodic: No
+
+Interpretation:
+ The empirical EII was not different from values that would be expected if the process was random, meaning the empirical data cannot be described by the population structure -- significant information is lost when collapsing across to the population structure.
