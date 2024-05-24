@@ -568,7 +568,7 @@ TEFI: -2.467[1] "==============================================="
 [1;m[4;mEmpirical EII
 
 [0m[0mEII Method: Unweighted
-Shuffles: 5000
+Shuffles: 5000 
 EII:  1.9765
 
 [1;m[4;mBootstrap EII

@@ -212,6 +212,8 @@ network.g.ds <- network.g.ds[,-8]
 
 print("Model 5: group, zero order")
 
+
+
 model.5 <- dynEGA(
     data = network.g.ds,
     n.embed = 5,

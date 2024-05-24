@@ -2,7 +2,7 @@
 
 library(EGAnet)
 library(zoo)
-library(TSEntropies)
+# library(TSEntropies)
 
 # helper functions 
 
