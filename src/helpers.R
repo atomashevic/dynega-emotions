@@ -17,47 +17,7 @@ populism <- function(gps, i){
   return(gps$Type_Populism[gps$CPARTYABB==p][1])
 }
 
-addlogratio <- function(row, zt = 0.005){
-# Function to apply additive log-ratio transformation to a row of compositional data
-# Args:
-#   row: a row of compositional data with 6 basic emotions (anger, happiness, surprise, sadness, fear, disgust) and a neutral expression
-#   zt: a small constant to avoid zero values in the row
-# Returns:
-#   A transformed row of compositional data
-  tr <- row
-  for (i in 1:6){
-    if (row[i] < zt)
-    {
-      row[i] <-  zt
-    }
-    if (row[7] == 0)
-    {
-      row[7] <- zt
-    }
-    tr[i] <- log(row[i]/row[7])
-  }
-  tr <- tr[,1:6]
-  return(tr)
-}
 
-centlogratio <- function(row, zt = 0.005){
-# Function to apply centered log-ratio transformation to a row of compositional data
-# Args:
-#   row: a row of compositional data with 6 basic emotions (anger, happiness, surprise, sadness, fear, disgust)
-#   zt: a small constant to avoid zero values in the row
-# Returns:
-#   A transformed row of compositional data
-  tr <- row
-  for (i in 1:6){
-    if (row[i] == 0)
-    {
-      row[i] <-  zt
-    }
-  }
-  gm <- exp(mean(unlist(log(row[1:6])))) 
-  tr[,1:6] <- log(row[,1:6]/gm)
-  return(tr[1:6])
-}
 
 clean.csv <- function(df, k, face = 0, tmax = 240, transformation = 'none', neutral = T){
 #' Clean a dataframe of facial expression data extracted from videos

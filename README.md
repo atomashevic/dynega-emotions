@@ -4,13 +4,11 @@ Repository for the paper [Dynamic Exploratory Graph Analysis of Emotions in Poli
 
 Inputs are in the `data` folder:
 - `gps.csv` Data from [Global Party Survey](https://www.globalpartysurvey.org/)
-- `videos-face-selection.csv` Face selection file from [Face of Populism](https://github.com/atomashevic/face-of-populism) repository
-- `*-t330.csv` Time series of emotions and neutral score each video, also from [Face of Populism](https://github.com/atomashevic/face-of-populism) repository
+- `videos-face-selection.csv` URL and face selection file from [Face of Populism](https://github.com/atomashevic/face-of-populism) repository
 
-Results from the paper are reporduced by running:
+Results from the paper are reporduced by running two R scripts:
 
-1. `src/analysis-additive.R` the main analysis presented in the paper
-2. `src/figures.R` the main figures presented in the paper
-3. `src/analysis-center.R` the supplementary analysis based on center transformation of compositional data
+1. `src/process-videos.R` Process the videos and extracts the FER scores, saves results to `data/revision/` 
+2. `src/analysis-revision.R` produces all results and plots from the paper
 
-Output is located in `figures`, `results,` and `data` directories.
+The entire output is located in `figures` and `data` directories.
