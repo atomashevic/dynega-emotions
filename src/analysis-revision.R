@@ -1,11 +1,11 @@
 # Analysis for the paper revision
 
-source("src/helpers.R")
+source("../src/helpers.R")
 
 # Load GPS and URL data
 
-urls <- read.csv("data/videos-faces-selection.csv")
-gps <- read.csv("data/gps.csv")
+urls <- read.csv("../data/videos-faces-selection.csv")
+gps <- read.csv("../data/gps.csv")
 
 # Aggregate CSV files
 
@@ -35,8 +35,10 @@ for (i in 2:k) {
 
 print(paste("Dataset has", length(unique(ds$video)), "videos"))
 print(paste("Dataset has:", nrow(ds), "rows"))
-print(paste("Average number of frames per video:",
-            nrow(ds) / length(unique(ds$video))))
+print(paste(
+  "Average number of frames per video:",
+  nrow(ds) / length(unique(ds$video))
+))
 print(paste("Dataset has", ncol(ds), "columns"))
 print("Column names:")
 print(colnames(ds))
@@ -68,10 +70,12 @@ for (n in nembeds) {
 }
 
 ne <- nembeds[which.min(tefis)]
-print(paste("Lowest TEFI of",
-            round(min(tefis), 3),
-            "was found for",
-            ne, "embedding dimensions"))
+print(paste(
+  "Lowest TEFI of",
+  round(min(tefis), 3),
+  "was found for",
+  ne, "embedding dimensions"
+))
 
 model_1 <- dynEGA(
   data = network_ds,
@@ -130,10 +134,12 @@ for (n in nembeds) {
 
 ne <- nembeds[which.min(tefis)]
 
-print(paste("Lowest TEFI of",
-            round(min(tefis), 3),
-            "was found for",
-            ne, "embedding dimensions"))
+print(paste(
+  "Lowest TEFI of",
+  round(min(tefis), 3),
+  "was found for",
+  ne, "embedding dimensions"
+))
 
 model_2 <- dynEGA(
   data = network_ds,
@@ -172,7 +178,6 @@ print("Network Loadings for Model 2")
 net.loads(model_2$dynEGA$population$network, model_2$dynEGA$population$wc)
 
 print("===============================================")
-
 
 print("Model 3: group, zero order")
 
@@ -224,13 +229,13 @@ print(model_3)
 library(ggplot2)
 
 
-nl1 <-  net.loads(model_3$dynEGA[[1]][[1]]$network, model_3$dynEGA[[1]][[1]]$wc)
+nl1 <- net.loads(model_3$dynEGA[[1]][[1]]$network, model_3$dynEGA[[1]][[1]]$wc)
 
-nl2 <-  net.loads(model_3$dynEGA[[1]][[2]]$network, model_3$dynEGA[[1]][[2]]$wc)
+nl2 <- net.loads(model_3$dynEGA[[1]][[2]]$network, model_3$dynEGA[[1]][[2]]$wc)
 
-nl3 <-  net.loads(model_3$dynEGA[[1]][[3]]$network, model_3$dynEGA[[1]][[3]]$wc)
+nl3 <- net.loads(model_3$dynEGA[[1]][[3]]$network, model_3$dynEGA[[1]][[3]]$wc)
 
-nl4 <-  net.loads(model_3$dynEGA[[1]][[4]]$network, model_3$dynEGA[[1]][[4]]$wc)
+nl4 <- net.loads(model_3$dynEGA[[1]][[4]]$network, model_3$dynEGA[[1]][[4]]$wc)
 
 
 ### create data frame of network scores for each emotion and group
@@ -249,16 +254,22 @@ df <- df %>% gather(key = "group", value = "loading", -emotion)
 
 
 png("figures/revision-model3-loadings.png",
-    width = 2400, height = 2400, res = 300)
-ggplot(df, aes(x = factor(group), y = loading,
-               group = emotion, color = emotion)) +
+  width = 2400, height = 2400, res = 300
+)
+ggplot(df, aes(
+  x = factor(group), y = loading,
+  group = emotion, color = emotion
+)) +
   geom_line(size = 1.5) +
   geom_point(size = 2) +
   theme_minimal() +
-  scale_x_discrete(labels = c("Moderate pluralist",
-                              "Moderate populist",
-                              "Strong populist")) +
-  xlab("Populism") + ylab("Loading") +
+  scale_x_discrete(labels = c(
+    "Moderate pluralist",
+    "Moderate populist",
+    "Strong populist"
+  )) +
+  xlab("Populism") +
+  ylab("Loading") +
   ggtitle("Network Loadings Across Groups for Model 5")
 dev.off()
 
